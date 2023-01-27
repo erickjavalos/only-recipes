@@ -1,10 +1,14 @@
 const router = require('express').Router();
 // const { Gallery, Painting } = require('../models');
 
-// GET all galleries for homepage
 router.get('/', async (req, res) => {
+  res.render('login')
+})
 
-  res.render('homepage', {});
+// GET all galleries for homepage
+// router.get('/', async (req, res) => {
+
+  // res.render('homepage', {});
   // try {
   //   const dbGalleryData = await Gallery.findAll({
   //     include: [
@@ -39,7 +43,7 @@ router.get('/', async (req, res) => {
   //   console.log(err);
   //   res.status(500).json(err);
   // }
-});
+// });
 
 // // GET one gallery
 // router.get('/gallery/:id', async (req, res) => {
