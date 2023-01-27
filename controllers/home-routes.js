@@ -2,13 +2,21 @@ const router = require('express').Router();
 // const { Gallery, Painting } = require('../models');
 
 router.get('/', async (req, res) => {
+  res.render('homepage',{
+    loggedIn: req.session.loggedIn
+  })
+})
+
+// render login page data
+router.get('/login', async (req, res) => {
   res.render('login')
 })
 
-// render profile data
-router.get('/profile', async (req, res) => {
-  res.render('profile')
+// render signup data
+router.get('/signup', async (req, res) => {
+  res.render('signup')
 })
+
 
 // GET all galleries for homepage
 // router.get('/', async (req, res) => {

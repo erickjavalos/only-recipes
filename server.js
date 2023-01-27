@@ -11,6 +11,7 @@ const helpers = require('./utils/helpers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// session initialization
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
@@ -28,12 +29,15 @@ const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+//  handle middleware for getting public files
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// instantiate routes in controllers
 app.use(routes);
 
+// synchronize database first then start server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
