@@ -5,6 +5,11 @@ router.get('/', async (req, res) => {
   res.render('login')
 })
 
+// render profile data
+router.get('/profile', async (req, res) => {
+  res.render('profile')
+})
+
 // GET all galleries for homepage
 // router.get('/', async (req, res) => {
 

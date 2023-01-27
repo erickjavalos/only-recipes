@@ -31,7 +31,19 @@ const signupFormHandler = async (event) => {
   // check if all three values were defined
   if (username && email && password) 
   {
-    
+    // submit post request to the backend to upload to our DB
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ username, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    // signed up was successful and by default signs user in!
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to sign up.');
+    }
   }
   // give a alert to user that information entered was incorrect
   else
