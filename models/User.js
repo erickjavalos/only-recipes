@@ -1,17 +1,18 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Recipies extends Model {}
+class User extends Model {}
 
-NewProfile.init(
+User.init(
   {
-    id: {
+    id: 
+    {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    first_Name: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -37,12 +38,19 @@ NewProfile.init(
       },
   },
   {
+    hooks: {
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'NewProfiles',
-  }
+    modelName: 'User',
+  },
+
 );
 
-module.exports = NewProfile;
+module.exports = User;
