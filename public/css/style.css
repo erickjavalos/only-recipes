@@ -1,4 +1,4 @@
-:root {
+ :root {
   --primary: #3d5852;
   --secondary: #86938f;
   --tertiary: #5e877f;
@@ -9,15 +9,7 @@
   --border-radius: 0.3rem;
 }
 
-body {
-  font-family: Arial;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: flex-start;
-  background-color: var(--quatrinary);
-}
+
 
 a {
   color: var(--dark);
@@ -61,10 +53,6 @@ nav a {
   text-align: center;
 }
 
-nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
-}
 
 .gallery {
   flex: 4;
@@ -105,7 +93,6 @@ img {
   font-weight: bold;
 }
 
-/* CARDS */
 .card {
   margin: 20px;
   flex: 0 1 300px;
@@ -155,7 +142,6 @@ img {
   padding-left: 100px;
 }
 
-/* LAYOUT */
 .container {
   display: flex;
   flex-flow: column wrap;
