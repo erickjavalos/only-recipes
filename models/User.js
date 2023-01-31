@@ -14,7 +14,6 @@ class User extends Model {
 User.init(
   {
     id: { 
-      main
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -50,7 +49,6 @@ User.init(
       },
     },
     sequelize,
-    design-back-end-api-end-points
     timestamps: true,
     freezeTableName: true,
     underscored: true,
