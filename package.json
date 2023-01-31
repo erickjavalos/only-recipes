@@ -27,5 +27,6 @@
   "bugs": {
     "url": "https://github.com/erickjavalos/only-recipes/issues"
   },
-  "homepage": "https://github.com/erickjavalos/only-recipes#readme"
+  "homepage": "https://github.com/erickjavalos/only-recipes#readme",
+  "devDependencies": {}
 }

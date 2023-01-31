@@ -13,7 +13,8 @@ class User extends Model {
 // initialize the db parameters
 User.init(
   {
-    id: {
+    id: { 
+      main
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -43,16 +44,18 @@ User.init(
     hooks: {
       // hash the password and store
       async beforeCreate(newUserData) {
+        main
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
     },
     sequelize,
-    timestamps: false,
+    design-back-end-api-end-points
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
-  }
-);
+    modelName: 'User',
+  },
 
+);
 module.exports = User;
