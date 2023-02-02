@@ -1,4 +1,4 @@
-const {Recipes} = require('../models')
+const Recipes = require('../models/Recipes')
 
 
 
