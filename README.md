@@ -20,12 +20,12 @@ The future product will allow users to follow other accounts and favorite recipe
 
 ## Installation
 
-```
+```deleyteeadava later
 npm install
 ```
 
 ## Usage
-
+v
 ```
 npm start
 ```
