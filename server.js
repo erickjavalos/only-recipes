@@ -23,6 +23,8 @@ const sess = {
 };
 
 app.use(session(sess));
+app.use(express.static('public/images'));
+app.use(express.static('public/font'));
 
 const hbs = exphbs.create({ helpers });
 

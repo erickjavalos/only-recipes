@@ -12,7 +12,56 @@
 
 <body>
   {{!-- handle bars for other views --}}
-  {{{body}}}
+ {{!-- {{{body}}}  --}}
+ {{!-- header for login --}}
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <img src="Recipes-removebg-preview.png" alt="logo" width="80" height="80">
+        <a class="navbar-brand" href="/">Only Recipes</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto ">
+              {{!-- only show sign up option --}}
+              <li class="nav-item">
+                  <a class="nav-link" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/login">Log In</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/signup">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/editprofile">Edit Profile</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<main>
+  <div class="gallery">
+    {{!-- define login and sign up card --}}
+      {{!-- login card --}}
+      <div class="login-card">
+        <h2 class="page-title">Login</h2>
+        {{!-- login form --}}
+        <form class="form login-form">
+          <div class="form-group">
+            <label for="email-login">Email:</label>
+            <input class="form-input" type="text" id="email-login" />
+          </div>
+          <div class="form-group">
+            <label for="password-login">Password:</label>
+            <input class="form-input" type="password" id="password-login" />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">login</button>
+          </div>
+        </form>
+      </div>
+
+    <script src="./js/login.js"></script>
+  </div>
+</main>
 </body>
 
 </html>

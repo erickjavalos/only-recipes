@@ -1,6 +1,6 @@
  :root {
   --primary: #3d5852;
-  --secondary: #86938f;
+  --secondary: #ffffff;
   --tertiary: #5e877f;
   --quatrinary: #6c6b67;
   --light: #e3e4e3;
@@ -9,7 +9,11 @@
   --border-radius: 0.3rem;
 }
 
-
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url("../../");
+  font-style: normal;
+}
 
 a {
   color: var(--dark);
@@ -48,7 +52,7 @@ nav {
 
 nav a {
   color: var(--light);
-  padding: 14px 20px;
+  padding: 0;
   text-decoration: none;
   text-align: center;
 }
@@ -153,4 +157,8 @@ img {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+.nav-item {
+  font-weight: bold;
 }
