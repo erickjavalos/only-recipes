@@ -1,6 +1,6 @@
  :root {
   --primary: #3d5852;
-  --secondary: #86938f;
+  --secondary: #ffffff;
   --tertiary: #5e877f;
   --quatrinary: #6c6b67;
   --light: #e3e4e3;
@@ -9,10 +9,12 @@
   --border-radius: 0.3rem;
 }
 
-
+* {
+  font-family: 'Mochiy Pop One';
+}
 
 a {
-  color: var(--dark);
+  color: #000;
   text-decoration: none;
 }
 
@@ -44,11 +46,13 @@ aside {
 nav {
   display: flex;
   background-color: var(--secondary);
+  justify-content: center;
+  align-items: center;
 }
 
 nav a {
-  color: var(--light);
-  padding: 14px 20px;
+  color: var(--dark);
+  padding: 0;
   text-decoration: none;
   text-align: center;
 }
@@ -80,6 +84,10 @@ img {
   height: auto;
 }
 
+#logo {
+  margin-left: -15px;
+}
+
 .painting {
   width: 50%;
   background-color: white;
@@ -106,13 +114,12 @@ img {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
   max-width: 50%;
-  padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  background-color: #577a7c;
-  color: var(--light);
+  padding: 100px 100px;
+  border: 0px solid var(--dark);
+  border-radius: 10%;
+  background-color: #ffffff;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .card header {
@@ -153,4 +160,46 @@ img {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+.nav-item {
+  color: black;
+  font-weight: 400;
+}
+
+.navbar-brand {
+  margin-left: -14px;
+  font-weight: 100;
+}
+
+.pill {
+  border: none;
+  padding: 0px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 2px;
+  cursor: pointer;
+  border-radius: 35px;
+}
+
+.gold {
+  background-color: #ffc107;
+}
+
+.grey {
+  background-color: #ececec;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+
+.page-title {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+input::placeholder {
+  font-size: 12px;
 }
