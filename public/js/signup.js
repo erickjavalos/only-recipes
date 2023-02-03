@@ -15,6 +15,7 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ username, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
+    console.log(response);
 
     // signed up was successful and by default signs user in!
     if (response.ok) {
