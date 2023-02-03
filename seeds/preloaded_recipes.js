@@ -1,4 +1,4 @@
-const Recipes = require('../models/Recipes')
+const {Recipe} = require('../models')
 
 
 
@@ -12,7 +12,7 @@ const recipes =
       preptime:"10 mins",
       cooktime:"30 mins",
       totaltime:"40 mins",
-      instructions:"Step 1:Cook the vegetables:In a large skillet set over medium heat, melt the butter. Add the onions and bell peppers. Cook until soften, 6 to 7 minutes, stirring frequently. The vegetables shouldn’t brown at this point, just soften. Step 2:Cook the beef:Add the ground beef and use a wooden spoon to break it up into small pieces as it cooks. Cook until the meat is browned, 5 to 6 minutes. Step 3:Make it saucy:Stir in the stock, ketchup, Worcestershire sauce, garlic powder, salt, and black pepper. Turn the heat down to low and simmer for 4 to 5 minutes until the mixture thickens. Stack 6 slices provolone cheese on a cutting board and use a chef’s knife to cut them into 1/2-inch pieces. Right before serving, stir in the cut cheese. Step 4:Assemble the sloppy joes: Toast the brioche buns in a toaster oven or toaster. Lay the remaining 6 slices provolone cheese on each brioche bun half. Top the cheese with heaping spoonfuls of the sloppy joe mixture and the top bun. Serve warm. If you have leftover sloppy joe mixture, good news! It keeps beautifully in the fridge for 4 to 5 days and reheats well in the microwave or in a skillet with a splash of water or stock. You can freeze the mixture in freezer-safe container for 3 months. Thaw it before reheating. If you need to thaw it quickly, you can do so in the microwave.",
+      instructions:"Step 1:Cook the vegetables:In a large skillet set over medium heat, melt the butter. Add the onions and bell peppers. Cook until soften, 6 to 7 minutes, stirring frequently. The vegetables shouldn’t brown at this point, just soften. Step 2:Cook the beef:Add the ground beef and use a wooden spoon to break it up into small pieces as it cooks. Cook until the meat is browned,",
       images:"https://www.simplyrecipes.com/thmb/mUd-uPsPpXw68kxJEx00gU0PFLM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Philly-Cheesesteak-Sloppy-Joes-LEAD-04-27e9055fa2744039989619dcafef0551.jpg",
       allergens:"Eggs",
       difficulty:"Medium",
@@ -401,7 +401,7 @@ const recipes =
 
 
 ]
-const seedsrecipes = ()=> Recipes.bulkCreate(recipes)
+const seedsrecipes = ()=> Recipe.bulkCreate(recipes)
 module.exports = seedsrecipes
 
 
