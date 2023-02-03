@@ -5,7 +5,7 @@ const {Recipe} = require('../models')
 const recipes = 
 [
     {
-      user_id:1,
+      user_id:2,
       recipes_name:"Philly Cheesesteak Sloppy Joes",
       description:"Take the best of two classic sandwiches—sloppy joes and Philly cheesesteaks—to make these cheesy, meaty, and saucy cheesesteak sloppy joes!",
       ingredients:"2 tablespoons unsalted butter, 1 small white onion, chopped, 1 green bell pepper, seeded and chopped, 1 pound lean beef, 90/10 blend, 1/2 cup beef stock, 1/4 cup ketchup, 2 tablespoons Worcestershire sauce, 1/2 teaspoon garlic powder, 1/2 teaspoon kosher salt, 1/2 teaspoon black pepper, 12 slices provolone cheese, divided, 6 brioche buns, store-bought or homemade",

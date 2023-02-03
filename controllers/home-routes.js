@@ -4,9 +4,48 @@ const router = require('express').Router();
 // const { Gallery, Painting } = require('../models');
 
 router.get('/', async (req, res) => {
-  res.render('homepage',{
-    loggedIn: req.session.loggedIn
-  })
+  if (req.session.loggedIn && req.session.userId){
+
+    try{
+      const dbUserData = await User.findByPk(req.session.userId, {
+        include: [
+          {
+            model: Recipe,
+            attributes: [
+              'recipe_id',
+              'recipes_name',
+              'allergens',
+              'servings',
+              'preptime',
+              'cooktime',
+              'totaltime',
+              'instructions',
+              'difficulty',
+            ],
+          },
+        ],
+      });
+
+      const userRecipe = dbUserData.get({ plain: true });
+
+      res.render('homepage',{
+        loggedIn: req.session.loggedIn,
+        // TODO: Add additional information to add to front end
+        firstName: userRecipe.first_name,
+      })
+      
+    }catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+
+  }
+  else {
+
+    res.render('homepage',{
+      loggedIn: req.session.loggedIn
+    })
+  }
 })
 
 // render login page data
@@ -43,12 +82,9 @@ router.get('/user/:id', async (req, res) => {
     // console.log(dbUserData)
     const userRecipe = dbUserData.get({ plain: true });
     console.log(userRecipe)
-    // res.render('gallery', {
-    //   gallery,
-    //   // We are not incrementing the 'countVisit' session variable here
-    //   // but simply sending over the current 'countVisit' session variable to be rendered
-    //   countVisit: req.session.countVisit,
-    // });
+    res.render('profile-details', {
+      firstName : userRecipe.first_name
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
