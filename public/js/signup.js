@@ -2,17 +2,20 @@ const signupFormHandler = async (event) => {
   event.preventDefault();
 
   // // grab all values in form
+  const firstName = document.querySelector('#first-name').value.trim();
+  const lastName = document.querySelector('#last-name').value.trim();
+  const experience = document.querySelector('#experience').value.trim();
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
   // check if all three values were defined
-  if (username && email && password) 
+  if (firstName && lastName && experience && username && email && password) 
   {
     // submit post request to the backend to upload to our DB
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ firstName, lastName, experience, username, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
     console.log(response);
