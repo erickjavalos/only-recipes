@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 
 const userData = [
     {
-        id:1,
+        user_id:1,
         first_name: 'Bob',
         last_name: 'Billy',
         experience: 'none',
@@ -12,7 +12,7 @@ const userData = [
         password: 'e',
     },
     {
-        id:2,
+        user_id:2,
         first_name: 'Mandy',
         last_name: 'Evil',
         experience: '2 years',
@@ -21,7 +21,7 @@ const userData = [
         password: 'mandyisevil@2',
     },
     {
-        id:3,
+        user_id:3,
         first_name: 'Neal',
         last_name: 'Befourth',
         experience: '3 years',
@@ -30,7 +30,7 @@ const userData = [
         password: 'hailtheking@3',
     },
     {
-        id:4,
+        user_id:4,
         first_name: 'Jason',
         last_name: 'Todd',
         experience: '5 years',
@@ -39,7 +39,7 @@ const userData = [
         password: 'IamRobin@4',
     },
     {
-        id:5,
+        user_id:5,
         first_name: 'Tom',
         last_name: 'Orrow',
         experience: '9 years',
@@ -48,7 +48,7 @@ const userData = [
         password: 'timeline@5',
     },
     {
-        id:6,
+        user_id:6,
         first_name: 'Becca',
         last_name: 'Queen',
         experience: '10 years',
@@ -57,7 +57,7 @@ const userData = [
         password: 'Beccais1',
     },
     {
-        id:7,
+        user_id:7,
         first_name: 'Peter',
         last_name: 'Parker',
         experience: '12 years',
@@ -66,7 +66,7 @@ const userData = [
         password: 'MJay@1',
     },
     {
-        id:8,
+        user_id:8,
         first_name: 'Zac',
         last_name: 'Bac',
         experience: '14 years',
@@ -75,7 +75,7 @@ const userData = [
         password: 'ZacTheName@1',
     },
     {
-        id:9,
+        user_id:9,
         first_name: 'Mario',
         last_name: 'Lopez',
         experience: '15 years',
@@ -84,7 +84,7 @@ const userData = [
         password: 'IloveKelly',
     },  
     {
-        id:10,
+        user_id:10,
         first_name: 'Tony',
         last_name: 'bologna',
         experience: '16 years',
@@ -93,7 +93,7 @@ const userData = [
         password: 'WhoGetsTurkey@7',
     },
     {
-        id:11,
+        user_id:11,
         first_name: 'Red',
         last_name: 'X',
         experience: 'X years',
@@ -102,7 +102,7 @@ const userData = [
         password: 'XXXXXXXXX',
     },
     {
-        id:12,
+        user_id:12,
         first_name: 'Tom',
         last_name: 'Jerry',
         experience: '20 years',
@@ -111,7 +111,7 @@ const userData = [
         password: 'MouseCatDog@7',
     },
     {
-        id:13,
+        user_id:13,
         first_name: 'Monday',
         last_name: 'Addams',
         experience: '20 years',
