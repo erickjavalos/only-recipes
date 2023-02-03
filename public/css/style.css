@@ -9,14 +9,12 @@
   --border-radius: 0.3rem;
 }
 
-@font-face {
-  font-family: 'SourceSansPro';
-  src: url("../../");
-  font-style: normal;
+* {
+  font-family: 'Mochiy Pop One';
 }
 
 a {
-  color: var(--dark);
+  color: #000;
   text-decoration: none;
 }
 
@@ -48,10 +46,12 @@ aside {
 nav {
   display: flex;
   background-color: var(--secondary);
+  justify-content: center;
+  align-items: center;
 }
 
 nav a {
-  color: var(--light);
+  color: var(--dark);
   padding: 0;
   text-decoration: none;
   text-align: center;
@@ -160,5 +160,33 @@ img {
 }
 
 .nav-item {
-  font-weight: bold;
+  color: black;
+  font-weight: 400;
+}
+
+.navbar-brand {
+  font-weight: 100;
+}
+
+.pill {
+  border: none;
+  padding: 0px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 2px;
+  cursor: pointer;
+  border-radius: 35px;
+}
+
+.gold {
+  background-color: #ffc107;
+}
+
+.grey {
+  background-color: #dfdfdf;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
 }
