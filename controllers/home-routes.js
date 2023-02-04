@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
               'preptime',
               'cooktime',
               'totaltime',
+              'images',
               'instructions',
               'difficulty',
             ],
@@ -27,11 +28,14 @@ router.get('/', async (req, res) => {
       });
 
       const userRecipe = dbUserData.get({ plain: true });
-
+      console.log(userRecipe)
       res.render('homepage',{
         loggedIn: req.session.loggedIn,
-        // TODO: Add additional information to add to front end
+        recipes: userRecipe.recipes,
         firstName: userRecipe.first_name,
+        lastName: userRecipe.first_name,
+        experience: userRecipe.experience,
+        
       })
       
     }catch (err) {
@@ -82,9 +86,7 @@ router.get('/user/:id', async (req, res) => {
     // console.log(dbUserData)
     const userRecipe = dbUserData.get({ plain: true });
     console.log(userRecipe)
-    res.render('profile-details', {
-      firstName : userRecipe.first_name
-    });
+    res.status(200).json(userRecipe)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

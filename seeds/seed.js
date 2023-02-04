@@ -7,7 +7,7 @@ const seedDatabase = async () => {
 
   await seedsUser()
 
-  // await seedsRecipes()
+  await seedsRecipes()
 
   process.exit(0)
 };

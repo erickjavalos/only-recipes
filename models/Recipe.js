@@ -46,6 +46,10 @@ Recipe.init(
         type: DataTypes.TEXT('long'),
         allowNull: false,
       },
+    images: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }, 
     difficulty: {
         type: DataTypes.STRING,
         allowNull: false,
