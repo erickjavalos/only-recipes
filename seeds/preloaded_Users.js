@@ -4,12 +4,12 @@ const bcrypt = require('bcrypt')
 const userData = [
     {
         user_id:1,
-        first_name: 'Bob',
-        last_name: 'Billy',
+        first_name: 'erick',
+        last_name: 'avalos',
         experience: 'none',
-        username: 'BillyBBOB808',
-        email: 'billybob@test.com',
-        password: 'e',
+        username: 'erick',
+        email: 'ava@test.com',
+        password: '$2b$10$zG5vXWkbVG7sk1CNFFaY9e0yTiUAIR.KJonPysmAtm2FO/H.dS0ny',
     },
     {
         user_id:2,
