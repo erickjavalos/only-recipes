@@ -1,37 +1,60 @@
 {{!-- header for homepage --}}
-<div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Only Recipes</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav navbar-nav ml-auto ">
-            {{!-- display logout only if logged in --}}
+
+
+ <header>
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <div id="logo">
+        <img src="Recipes-removebg-preview-cropped.png" alt="logo" width="120" height="120">
+      </div>
+      <a class="navbar-brand" href="/">OnlyRecipes</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav ml-auto ">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
             {{#if loggedIn}}
-                <li class="nav-item">
-                    <a id="logout"class="nav-link">Logout</a>
-                </li>
-            {{!-- prompt user to login or create account --}}
+              <li class="nav-item pill gold">
+                <a id="logout"class="nav-link">Log Out</a> 
+
+              <li class="nav-item">
+              <a class="nav-link" href="/editprofile">Edit Profile</a>
+              </li>
             {{else}}
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/signup">Signup</a>
-                </li>
+  
+              {{!-- only show sign up option --}}
+              <li class="nav-item pill gold">
+                  <a class="nav-link" href="/login">Log In</a> 
+              </li>
+              <li class="nav-item pill grey">
+                  <a class="nav-link" href="/signup">Sign Up</a>
+              </li>
+
             {{/if}}
-            </ul>
-        </div>
+          </ul>
+      </div>
     </nav>
-</div>
+</header>
 
-{{!-- show in profile --}}
-{{#if loggedIn}}
-    {{!-- TODO: create partial to render profile data  --}}
+    <main>
+      {{!-- handle bars for other views --}}
+      {{!-- {{{body}}}  --}}
+
+      {{#if loggedIn}}
+      
+        {{> profile-details }}
+
+        <script src="/js/logout.js"></script>
+        {{else}}
+
+        <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;">
+     
+        {{/if}}
    
-    {{> profile-details}}
+    {{!-- {{> profile-details}} --}}
 
-    {{!-- add in logout functionality --}}
-    <script src="/js/logout.js"></script>
-{{!-- shows default landing page image --}}
-{{else}}
-    <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;">
-{{/if}}
+
+
+
+      <script src="./js/login.js"></script>
+    </main>
+
