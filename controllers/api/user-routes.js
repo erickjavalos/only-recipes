@@ -16,6 +16,8 @@ router.post('/', async (req, res) => {
       // if exception didnt happen, it saves the session and logs in 
       req.session.save(() => {
         req.session.loggedIn = true;
+        req.session.userId = dbUserData.user_id
+  
         res.status(200).json(dbUserData);
       });
     } 
@@ -56,6 +58,7 @@ router.post('/login', async (req, res) => {
     // update session to be logged in 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userId = dbUserData.user_id
 
       res
         .status(200)

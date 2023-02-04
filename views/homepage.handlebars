@@ -35,26 +35,20 @@
     </nav>
 </header>
 
-    <main>
-      {{!-- handle bars for other views --}}
-      {{!-- {{{body}}}  --}}
+<main>
+  {{!-- handle bars for other views --}}
+  {{#if loggedIn}}
+    {{!-- load up profile detail --}}
+    {{> profile-details }}
 
-      {{#if loggedIn}}
-      
-        {{> profile-details }}
+    <script src="/js/logout.js"></script>
+  {{else}}
 
-        <script src="/js/logout.js"></script>
-        {{else}}
-
-        <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;">
-     
-        {{/if}}
-   
-    {{!-- {{> profile-details}} --}}
+    <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;">
+  
+  {{/if}}
 
 
 
-
-      <script src="./js/login.js"></script>
-    </main>
+</main>
 
