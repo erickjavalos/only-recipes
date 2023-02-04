@@ -45,13 +45,13 @@ aside {
 
 nav {
   display: flex;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   justify-content: center;
   align-items: center;
 }
 
 nav a {
-  color: var(--dark);
+  color: white;
   padding: 0;
   text-decoration: none;
   text-align: center;
@@ -60,7 +60,7 @@ nav a {
 
 .gallery {
   flex: 4;
-  background-color: #fff;
+  background-color: black;
   padding: 50px;
   display: flex;
   flex-flow: column wrap;
@@ -168,6 +168,7 @@ img {
 }
 
 .navbar-brand {
+  color: white;
   margin-left: -14px;
   font-weight: 100;
 }
@@ -192,7 +193,7 @@ img {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: black;
+  color: var(--secondary);
 }
 
 .page-title {
@@ -203,3 +204,4 @@ img {
 input::placeholder {
   font-size: 12px;
 }
+
