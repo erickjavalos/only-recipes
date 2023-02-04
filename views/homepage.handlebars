@@ -1,92 +1,60 @@
 {{!-- header for homepage --}}
 
-            {{#if loggedIn}}
-       <div class="container my-5">
-      <h1 class="text-center">Recipe Page</h1>
-      <hr />
-      <div class="row">
-        <div class="col-md-4">
-          <img
-            src="https://www.simplyrecipes.com/thmb/LJtybgJVp1BjI2lR3rJruRpfyXQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2008__02__huevos-rancheros-horiz-a-1600-554b0519dd5a4b989995cef9761a6521.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-          />
-          <h2>Recipe Title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-          </p>
-        </div>
-        <div class="col-md-4">
-          <img
-            src="https://www.simplyrecipes.com/thmb/sa7aFD1tUouH_3cQqZNdmjXlgaM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Kale-Portobello-Egg-Bites-LEAD-10-f6fcb5383d2a4c64a2e2e163c1fe7d3d.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-          />
-          <h2>Recipe Title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-          </p>
-        </div>
-        <div class="col-md-4">
-          <img
-            src="https://www.simplyrecipes.com/thmb/mUd-uPsPpXw68kxJEx00gU0PFLM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Philly-Cheesesteak-Sloppy-Joes-LEAD-04-27e9055fa2744039989619dcafef0551.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-          />
-          <h2>Recipe Title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-          </p>
-        </div>
-         <div class="col-md-4">
-          <img
-            src="https://www.simplyrecipes.com/thmb/cwInFpziMADFf_Ot4Nceu2DW0Xs=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Loaded-Veggie-Sandwich-METHOD-5-af5e0461470046eea43ca6a22a6cafa8.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-          />
-          <h2>Recipe Title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-          </p>
-        </div>
-         <div class="col-md-4">
-          <img
-            src="https://www.simplyrecipes.com/thmb/w9vQRolHr86DzWQF6zpDPit4bCo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__07__Chicken-Salad-LEAD-1-e282629aeae54c198b8225819d3c4387.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-          />
-          <h2>Recipe Title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-          </p>
-        </div>
-         <div class="col-md-4">
-          <img
-            src="https://www.simplyrecipes.com/thmb/6w2DPSfSs7FseQWuFb3NpWxW2O8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__05__Pancake-Mix-LEAD-07-3ccd43097f524b9790ffd26a6e213134.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-          />
-          <h2>Recipe Title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-          </p>
-        </div>
-      </div>
-    </div>
-            {{else}}
-     
-            {{/if}}
 
-    {{#if loggedIn}}
+ <header>
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <div id="logo">
+        <img src="Recipes-removebg-preview-cropped.png" alt="logo" width="120" height="120">
+      </div>
+      <a class="navbar-brand" href="/">OnlyRecipes</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav ml-auto ">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            {{#if loggedIn}}
+              <li class="nav-item pill gold">
+                <a id="logout"class="nav-link">Log Out</a> 
+
+              <li class="nav-item">
+              <a class="nav-link" href="/editprofile">Edit Profile</a>
+              </li>
+            {{else}}
+  
+              {{!-- only show sign up option --}}
+              <li class="nav-item pill gold">
+                  <a class="nav-link" href="/login">Log In</a> 
+              </li>
+              <li class="nav-item pill grey">
+                  <a class="nav-link" href="/signup">Sign Up</a>
+              </li>
+
+            {{/if}}
+          </ul>
+      </div>
+    </nav>
+</header>
+
+    <main>
+      {{!-- handle bars for other views --}}
+      {{!-- {{{body}}}  --}}
+
+      {{#if loggedIn}}
+      
+        {{> profile-details }}
+
+        <script src="/js/logout.js"></script>
+        {{else}}
+
+        <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;">
+     
+        {{/if}}
    
     {{!-- {{> profile-details}} --}}
 
-    <script src="/js/logout.js"></script>
-{{else}}
-{{/if}}
+
+
+
+      <script src="./js/login.js"></script>
+    </main>
+
