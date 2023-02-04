@@ -28,7 +28,6 @@ router.get('/', async (req, res) => {
       });
 
       const userRecipe = dbUserData.get({ plain: true });
-      console.log(userRecipe)
       res.render('homepage',{
         loggedIn: req.session.loggedIn,
         recipes: userRecipe.recipes,
@@ -62,6 +61,38 @@ router.get('/signup', async (req, res) => {
   res.render('signup')
 })
 
+// render single recipe page
+router.get('/recipe', async (req,res) => {
+  if (req.session.loggedIn)
+  {
+    // get id from query
+    let id = req.query.id;
+    // query recipe db by id
+    try {
+      const recipeData = await Recipe.findOne({
+        where: {
+          recipe_id: id
+        }
+      })
+      const recipe = recipeData.get({ plain: true });
+      console.log(recipe)
+    }
+    catch(err)
+    {
+      console.log(err)
+    }
+    console.log(id)
+    res.render('recipe')
+  }
+  else 
+  {
+    // redirect to homepage
+    res.redirect('/');
+  }
+})
+
+
+// TODO remove route later
 router.get('/user/:id', async (req, res) => {
   try {
     console.log('Hello World')
