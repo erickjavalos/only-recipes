@@ -22,6 +22,10 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    ingredients: {
+      type: DataTypes.TEXT('long'),
+      allowNull: false,
+    },
     allergens: {
       type: DataTypes.STRING,
       allowNull: false,

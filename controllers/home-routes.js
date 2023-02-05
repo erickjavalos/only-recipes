@@ -62,6 +62,11 @@ router.get('/signup', async (req, res) => {
   res.render('signup')
 })
 
+// render add recipe data
+router.get('/addrecipe', async (req, res) => {
+  res.render('addrecipe')
+})
+
 router.get('/user/:id', async (req, res) => {
   try {
     console.log('Hello World')

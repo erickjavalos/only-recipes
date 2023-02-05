@@ -75,19 +75,23 @@ router.post('/addrecipe', async (req, res) => {
   // attempt to create a recipe in our users DB
   try {
     // makes a query to create user recipe
-    // const dbRecipeData = await Recipe.create({
-    //   recipes_name: req.body.recipesName,
-    //   description: req.body.description,
-    //   ingredients: req.body.ingredients,
-    //   servings: req.body.servings,
-    //   preptime: req.body.prepTime,
-    //   cooktime: req.body.cookTime,
-    //   totaltime: req.body.totalTime,
-    //   instructions: req.body.instructions,
-    //   allergens: req.body.allergens,
-    //   difficulty: req.body.difficulty,
-    console.log('hello world')
-    // });
+    console.log(req.body)
+    const dbRecipeData = await Recipe.create({
+      user_id: req.session.userId,
+      recipes_name: req.body.recipesName,
+      allergens: req.body.allergens,
+      servings: req.body.servings,
+      preptime: req.body.prepTime,
+      cooktime: req.body.cookTime,
+      totaltime: req.body.totalTime,
+      instructions: req.body.instructions,
+      images: req.body.images,
+      difficulty: req.body.difficulty,
+      description: req.body.description,
+      ingredients: req.body.ingredients,
+      difficulty: req.body.difficulty,
+    });
+    res.status(200).json(dbRecipeData);
     // if exception didnt happen, it saves the session and logs in 
   } catch (err) {
       res.status(500).json(err);
