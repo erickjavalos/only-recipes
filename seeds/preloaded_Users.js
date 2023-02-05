@@ -9,6 +9,7 @@ const userData = [
         experience: 'none',
         username: 'erick',
         email: 'ava@test.com',
+        //test123
         password: '$2b$10$zG5vXWkbVG7sk1CNFFaY9e0yTiUAIR.KJonPysmAtm2FO/H.dS0ny',
     },
     {

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {User} = require('../../models');
+const {Recipe} = require('../../models')
 
 router.post('/', async (req, res) => {
     // attempt to create user in our users DB
@@ -67,6 +68,29 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
+  }
+});
+
+router.post('/addrecipe', async (req, res) => {
+  // attempt to create a recipe in our users DB
+  try {
+    // makes a query to create user recipe
+    // const dbRecipeData = await Recipe.create({
+    //   recipes_name: req.body.recipesName,
+    //   description: req.body.description,
+    //   ingredients: req.body.ingredients,
+    //   servings: req.body.servings,
+    //   preptime: req.body.prepTime,
+    //   cooktime: req.body.cookTime,
+    //   totaltime: req.body.totalTime,
+    //   instructions: req.body.instructions,
+    //   allergens: req.body.allergens,
+    //   difficulty: req.body.difficulty,
+    console.log('hello world')
+    // });
+    // if exception didnt happen, it saves the session and logs in 
+  } catch (err) {
+      res.status(500).json(err);
   }
 });
 
