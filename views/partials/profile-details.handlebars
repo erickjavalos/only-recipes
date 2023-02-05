@@ -1,31 +1,16 @@
-    {{!-- <header>{{title}}</header> --}}
-{{!-- <section class="gallary"></section>
-    <div class="login-card">
-        {{firstName}}
-        {{!-- {{recipes_name}}
-        {{allergens}}
-        {{servings}}
-        {{preptime}}
-        {{cooktime}}
-        {{totaltime}}
-        {{instructions}}
-        {{difficulty}} --}}
-    {{!-- </div>
-</section>  --}}
-
 <div class="container my-5">
-    <h1 class="text-center">Recipe Page</h1>
+    <h1 class="text-center">Recipes</h1>
     <hr />
-    <div class="row">
+    <div class="row recipe-overview">
         {{!-- iterate through each recipe --}}
         {{#each recipes}}
-            <div class="col-md-4">
+            <div id="{{recipe_id}}" class="col-md-4 card card-hover">
+                <h4>{{recipes_name}}</h4>
                 <img
                     src= {{images}}
                     alt="Recipe Image"
                     class="img-fluid"
                 />
-                <h2>{{recipes_name}}</h2>
                 <p>{{servings}}</p>
                 <p>{{cooktime}}</p>
             </div>
@@ -34,80 +19,4 @@
 
     </div>
 </div>
-        {{!-- <div class="col-md-4">
-            <img
-            src="https://www.simplyrecipes.com/thmb/LJtybgJVp1BjI2lR3rJruRpfyXQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2008__02__huevos-rancheros-horiz-a-1600-554b0519dd5a4b989995cef9761a6521.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-            />
-            <h2>Recipe Title</h2>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-            </p>
-        </div> --}}
-
-        {{!--
-        <div class="col-md-4">
-            <img
-            src="https://www.simplyrecipes.com/thmb/sa7aFD1tUouH_3cQqZNdmjXlgaM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Kale-Portobello-Egg-Bites-LEAD-10-f6fcb5383d2a4c64a2e2e163c1fe7d3d.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-            />
-            <h2>Recipe Title</h2>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <img
-            src="https://www.simplyrecipes.com/thmb/mUd-uPsPpXw68kxJEx00gU0PFLM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Philly-Cheesesteak-Sloppy-Joes-LEAD-04-27e9055fa2744039989619dcafef0551.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-            />
-            <h2>Recipe Title</h2>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <img
-            src="https://www.simplyrecipes.com/thmb/cwInFpziMADFf_Ot4Nceu2DW0Xs=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Loaded-Veggie-Sandwich-METHOD-5-af5e0461470046eea43ca6a22a6cafa8.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-            />
-            <h2>Veggie Sandwich</h2>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <img
-            src="https://www.simplyrecipes.com/thmb/w9vQRolHr86DzWQF6zpDPit4bCo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__07__Chicken-Salad-LEAD-1-e282629aeae54c198b8225819d3c4387.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-            />
-            <h2>Chicken Salad</h2>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <img
-            src="https://www.simplyrecipes.com/thmb/6w2DPSfSs7FseQWuFb3NpWxW2O8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__05__Pancake-Mix-LEAD-07-3ccd43097f524b9790ffd26a6e213134.jpg"
-            alt="Recipe Image"
-            class="img-fluid"
-            />
-            <h2>Pancakes</h2>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            vestibulum nisi a risus bibendum, et luctus tellus dignissim.
-            </p>
-        </div>
-        --}}
-    {{!-- </div>
-</div> --}}
+<script src="/js/recipe.js"></script>

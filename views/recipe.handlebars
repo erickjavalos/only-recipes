@@ -1,5 +1,4 @@
-{{!-- header for homepage --}}
- <header>
+<header>
   <nav class="navbar navbar-expand-lg navbar-light">
       <div id="logo">
         <img src="Recipes-removebg-preview-cropped.png" alt="logo" width="120" height="120">
@@ -37,9 +36,10 @@
   {{!-- handle bars for other views --}}
   {{#if loggedIn}}
     {{!-- load up profile detail --}}
-    {{> profile-details }}
+    {{> recipe-item }}
 
-    <script src="/js/logout.js"></script>
+    <script src="./js/recipeFormating.js"></script>
+    <script src="./js/logout.js"></script>
   {{else}}
 
     <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;">
@@ -49,4 +49,3 @@
 
 
 </main>
-
