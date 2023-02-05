@@ -1,5 +1,4 @@
-{{!-- header for homepage --}}
- <header>
+<header>
   <nav class="navbar navbar-expand-lg navbar-light">
       <div id="logo">
         <img src="Recipes-removebg-preview-cropped.png" alt="logo" width="120" height="120">
@@ -15,7 +14,7 @@
                 <a id="logout"class="nav-link">Log Out</a> 
 
               <li class="nav-item">
-              <a class="nav-link" href="/addRecipe?id={{userId}}">Add Recipe</a>
+              <a class="nav-link" href="/addRecipe">Add Recipe</a>
               </li>
             {{else}}
   
@@ -37,9 +36,14 @@
   {{!-- handle bars for other views --}}
   {{#if loggedIn}}
     {{!-- load up profile detail --}}
-    {{> profile-details }}
+    {{> recipe-item }}
 
-    <script src="/js/logout.js"></script>
+    {{!-- formats recipe item on page --}}
+    <script src="./js/recipeFormating.js"></script>
+    {{!-- delete button callback --}}
+    <script src="./js/delete.js"></script>
+    {{!-- logout button callback --}}
+    <script src="./js/logout.js"></script>
   {{else}}
 
     <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;">
@@ -49,4 +53,3 @@
 
 
 </main>
-

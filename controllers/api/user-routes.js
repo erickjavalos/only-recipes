@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const {User} = require('../../models');
-const {Recipe} = require('../../models')
+const {User, Recipe} = require('../../models');
 
 router.post('/', async (req, res) => {
     // attempt to create user in our users DB
@@ -59,7 +58,7 @@ router.post('/login', async (req, res) => {
     // update session to be logged in 
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.userId = dbUserData.user_id
+      req.session.userId = dbUserData.user_id;
 
       res
         .status(200)
@@ -74,23 +73,38 @@ router.post('/login', async (req, res) => {
 router.post('/addrecipe', async (req, res) => {
   // attempt to create a recipe in our users DB
   try {
-    // makes a query to create user recipe
     console.log(req.body)
+    // makes a query to create user recipe
+    // const dbRecipeData = await Recipe.create({
+    //   user_id: "1",
+    //   recipes_name: req.body.recipes_name,
+    //   allergens: req.body.allergens,
+    //   servings: req.body.servings,
+    //   preptime: req.body.preptime,
+    //   cooktime: req.body.cooktime,
+    //   totaltime: req.body.totaltime,
+    //   instructions: req.body.instructions,
+    //   images: req.body.images,
+    //   difficulty: req.body.difficulty,
+    //   description: req.body.description,
+    //   ingredients: req.body.ingredients,
+    //   difficulty: req.body.difficulty,
+    // });
     const dbRecipeData = await Recipe.create({
-      user_id: req.session.userId,
-      recipes_name: req.body.recipesName,
-      allergens: req.body.allergens,
+      user_id: req.body.id,
+      recipes_name: req.body.recipeName,
+      description: req.body.escription,
+      ingredients: req.body.ingredients,
       servings: req.body.servings,
-      preptime: req.body.prepTime,
-      cooktime: req.body.cookTime,
-      totaltime: req.body.totalTime,
+      preptime: req.body.preptime,
+      cooktime: req.body.cooktime,
+      totaltime: req.body.totaltime,
       instructions: req.body.instructions,
       images: req.body.images,
-      difficulty: req.body.difficulty,
-      description: req.body.description,
-      ingredients: req.body.ingredients,
-      difficulty: req.body.difficulty,
-    });
+      allergens: req.body.allergens,
+      difficulty: req.body.difficulty
+    })
+
     res.status(200).json(dbRecipeData);
     // if exception didnt happen, it saves the session and logs in 
   } catch (err) {
@@ -107,6 +121,27 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+// Delete recipe
+router.delete('/:id', async (req, res) => {
+  
+  try {
+    const recipeData = await Recipe.destroy({
+      where: {
+        recipe_id: req.params.id,
+      },
+    });
+
+    if (!recipeData) {
+      res.status(404).json({ message: 'No library card found with that id!' });
+      return;
+    }
+
+    res.status(200).json(recipeData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

@@ -1,6 +1,5 @@
 const addrecipeFormHandler = async (event) => {
     event.preventDefault();
-    console.log('submitted')
   
     // // grab all values in form
     const recipeName = document.querySelector('#recipe-name').value;
@@ -14,6 +13,10 @@ const addrecipeFormHandler = async (event) => {
     const allergens = document.querySelector('#recipe-allergens').value.trim();
     const difficulty = document.querySelector('#recipe-difficulty').value.trim();
     const images = document.querySelector('#recipe-image').value.trim();
+
+    let params = new URLSearchParams(location.search);
+    var id = params.get('id')
+
   
     // check if all ten values were defined
     if (recipeName && images && description && ingredients && servings && preptime && cooktime && totaltime && instructions && allergens && difficulty) 
@@ -21,20 +24,19 @@ const addrecipeFormHandler = async (event) => {
       // submit post request to the backend to upload to our DB
       const response = await fetch('/api/users/addrecipe', {
         method: 'POST',
-        body: JSON.stringify({ recipeName, description, ingredients, images, servings, preptime, cooktime, totaltime, instructions, allergens, difficulty}),
+        body: JSON.stringify({ recipeName, description, ingredients, images, servings, preptime, cooktime, totaltime, instructions, allergens, difficulty, id}),
         headers: { 'Content-Type': 'application/json' },
       });
-      // console.log(response);
   
       // signed up was successful and by default signs user in!
-      // if (response.ok) {
-      //   // navigate to profile page
-      //   document.location.replace('/');
-      // } 
-      // else {
-      //   // give alert that the sign up failed
-      //   alert('Failed to add Recipe. Make sure to fill all fields');
-      // }
+      if (response.ok) {
+        // navigate to profile page
+        document.location.replace('/');
+      } 
+      else {
+        // give alert that the sign up failed
+        alert('Failed to add Recipe. Make sure to fill all fields');
+      }
     }
     // give a alert to user that information entered was incorrect
     else

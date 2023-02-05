@@ -4,6 +4,7 @@ const router = require('express').Router();
 // const { Gallery, Painting } = require('../models');
 
 router.get('/', async (req, res) => {
+  console.log(req.session)
   if (req.session.loggedIn && req.session.userId){
 
     try{
@@ -28,9 +29,9 @@ router.get('/', async (req, res) => {
       });
 
       const userRecipe = dbUserData.get({ plain: true });
-      console.log(userRecipe)
       res.render('homepage',{
         loggedIn: req.session.loggedIn,
+        userId: req.session.userId,
         recipes: userRecipe.recipes,
         firstName: userRecipe.first_name,
         lastName: userRecipe.first_name,
@@ -67,6 +68,84 @@ router.get('/addrecipe', async (req, res) => {
   res.render('addrecipe')
 })
 
+// render single recipe page
+router.get('/recipe', async (req,res) => {
+  if (req.session.loggedIn)
+  {
+    // get id from query
+    let id = req.query.id;
+    // query recipe db by id
+    try {
+      const recipeData = await Recipe.findOne({
+        where: {
+          recipe_id: id
+        }
+      })
+      const recipe = recipeData.get({ plain: true });
+
+      res.render('recipe', {
+        loggedIn: req.session.loggedIn,
+        recipeName: recipe.recipes_name,
+        images: recipe.images,
+        content: [
+          {
+            title: "Ingredients:",
+            data: recipe.ingredients,
+            id: "ingredients"
+          },
+          {
+            title: "Allergens:",
+            data: recipe.allergens,
+            id: "allergens"
+          },
+          {
+            title: "Servings:",
+            data: recipe.servings,
+            id: "servings"
+          },
+          {
+            title: "Prep Time:",
+            data: recipe.preptime,
+            id: "prep-time"
+          },
+          {
+            title: "Cook Time",
+            data: recipe.cookTime,
+            id: "cook-time"
+          },
+          {
+            title: "Total Time",
+            data: recipe.totaltime,
+            id: "total-time"
+          },
+          {
+            title: "Difficulty",
+            data: recipe.difficulty,
+            id: "difficulty"
+          },
+          {
+            title: "Instructions",
+            data: recipe.instructions,
+            id: "instructions"
+          },
+        ]
+      })
+    }
+    catch(err)
+    {
+      // default to plain-text. send()
+      res.type('txt').send('Error querying db');
+    }
+  }
+  else 
+  {
+    // redirect to homepage
+    res.redirect('/');
+  }
+})
+
+
+// TODO remove route later
 router.get('/user/:id', async (req, res) => {
   try {
     console.log('Hello World')
