@@ -1,0 +1,55 @@
+
+{{!-- center edit and delete buttons --}}
+<div class="row edit-delete-btns">
+    {{!-- add buttons --}}
+     <ul>
+        {{!-- edit recipe button --}}
+        <li class="pill gold">
+            <a id="edit"class="nav-link">Edit</a> 
+        </li>
+        {{!-- delete recipe button --}}
+        <li class="pill gold">
+            <a id="delete"class="nav-link">Delete</a> 
+        </li>
+    </ul>
+</div>
+
+{{!-- recipe information --}}
+<div class="break">
+     <div class="row recipe-overview">
+        <div class="row card-recipe card-hover">
+            <div class="row" style="width: 100%">
+                <div class="col-12">
+                    <h5 class="card-title text-center">{{recipeName}}</h5>
+                </div>
+            </div>
+            <div class="row my-5">
+                {{!-- image portion --}}
+                <div class="col-4">
+
+                    <img
+                        src= {{images}}
+                        alt="Recipe Image"
+                        class="card-img-top"
+                    />
+                </div>
+                <div class="col-8">
+                    {{!-- iterate through each content --}}
+                    {{#each content}}
+                        <div class="row">
+                            <div class="col-2 no-padding">
+                                <p><b>{{title}}</b></p>
+                            </div>
+                            <div class="col-9 recipe-font">
+                                <div id="{{id}}-div">
+                                    <p id="{{id}}">{{data}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
