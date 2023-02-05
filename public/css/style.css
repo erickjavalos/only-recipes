@@ -29,6 +29,10 @@ header {
   color: var(--light);
 }
 
+h1 {
+  color: white;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;

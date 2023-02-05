@@ -32,6 +32,7 @@
     </nav>
 </header>
 
+<div class="gallery">
 <main>
   {{!-- handle bars for other views --}}
   {{#if loggedIn}}
@@ -39,13 +40,14 @@
     {{> profile-details }}
 
     <script src="/js/logout.js"></script>
+    
   {{else}}
 
-    <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;">
+    {{!-- <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;"> --}}
   
   {{/if}}
 
-
-
+</div>
 </main>
+
 
