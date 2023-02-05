@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User} = require('../../models');
+const {User, Recipe} = require('../../models');
 
 router.post('/', async (req, res) => {
     // attempt to create user in our users DB
@@ -79,6 +79,27 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+// Delete recipe
+router.delete('/:id', async (req, res) => {
+  
+  try {
+    const recipeData = await Recipe.destroy({
+      where: {
+        recipe_id: req.params.id,
+      },
+    });
+
+    if (!recipeData) {
+      res.status(404).json({ message: 'No library card found with that id!' });
+      return;
+    }
+
+    res.status(200).json(recipeData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
