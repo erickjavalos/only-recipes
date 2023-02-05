@@ -113,15 +113,15 @@ router.get('/recipe', async (req,res) => {
             id: "total-time"
           },
           {
+            title: "Difficulty",
+            data: recipe.difficulty,
+            id: "difficulty"
+          },
+          {
             title: "Instructions",
             data: recipe.instructions,
             id: "instructions"
           },
-          {
-            title: "Difficulty",
-            data: recipe.difficulty,
-            id: "difficulty"
-          }
         ]
       })
     }
