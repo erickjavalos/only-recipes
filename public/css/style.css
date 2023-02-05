@@ -19,7 +19,7 @@ a {
 }
 
 a:visited {
-  color: inherit;
+  color: whitesmoke;
 }
 
 header {
@@ -239,11 +239,11 @@ img {
 }
 
 .grey {
-  background-color: #ececec;
+  background-color: gray;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: var(--secondary);
+  color: white;
 }
 
 .page-title {
@@ -253,5 +253,9 @@ img {
 
 input::placeholder {
   font-size: 12px;
+}
+
+a.nav-link:hover {
+  color: rgba(255, 247, 0, 0.849);
 }
 
