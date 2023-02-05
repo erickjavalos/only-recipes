@@ -76,13 +76,60 @@ router.get('/recipe', async (req,res) => {
       })
       const recipe = recipeData.get({ plain: true });
       console.log(recipe)
+
+      res.render('recipe', {
+        loggedIn: req.session.loggedIn,
+        recipeName: recipe.recipes_name,
+        images: recipe.images,
+        content: [
+          {
+            title: "Ingredients:",
+            data: recipe.ingredients,
+            id: "ingredients"
+          },
+          {
+            title: "Allergens:",
+            data: recipe.allergens,
+            id: "allergens"
+          },
+          {
+            title: "Servings:",
+            data: recipe.servings,
+            id: "servings"
+          },
+          {
+            title: "Prep Time:",
+            data: recipe.preptime,
+            id: "prep-time"
+          },
+          {
+            title: "Cook Time",
+            data: recipe.cookTime,
+            id: "cook-time"
+          },
+          {
+            title: "Total Time",
+            data: recipe.totaltime,
+            id: "total-time"
+          },
+          {
+            title: "Instructions",
+            data: recipe.instructions,
+            id: "instructions"
+          },
+          {
+            title: "Difficulty",
+            data: recipe.difficulty,
+            id: "difficulty"
+          }
+        ]
+      })
     }
     catch(err)
     {
-      console.log(err)
+      // default to plain-text. send()
+      res.type('txt').send('Error querying db');
     }
-    console.log(id)
-    res.render('recipe')
   }
   else 
   {
