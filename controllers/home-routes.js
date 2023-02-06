@@ -4,6 +4,7 @@ const router = require('express').Router();
 // const { Gallery, Painting } = require('../models');
 
 router.get('/', async (req, res) => {
+  console.log(req.session)
   if (req.session.loggedIn && req.session.userId){
 
     try{
@@ -30,6 +31,7 @@ router.get('/', async (req, res) => {
       const userRecipe = dbUserData.get({ plain: true });
       res.render('homepage',{
         loggedIn: req.session.loggedIn,
+        userId: req.session.userId,
         recipes: userRecipe.recipes,
         firstName: userRecipe.first_name,
         lastName: userRecipe.first_name,
@@ -61,6 +63,11 @@ router.get('/signup', async (req, res) => {
   res.render('signup')
 })
 
+// render add recipe data
+router.get('/addrecipe', async (req, res) => {
+  res.render('addrecipe')
+})
+
 // render single recipe page
 router.get('/recipe', async (req,res) => {
   if (req.session.loggedIn)
@@ -75,7 +82,6 @@ router.get('/recipe', async (req,res) => {
         }
       })
       const recipe = recipeData.get({ plain: true });
-      console.log(recipe)
 
       res.render('recipe', {
         loggedIn: req.session.loggedIn,
@@ -170,5 +176,7 @@ router.get('/user/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 
 module.exports = router;

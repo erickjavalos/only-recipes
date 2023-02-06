@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
     // update session to be logged in 
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.userId = dbUserData.user_id
+      req.session.userId = dbUserData.user_id;
 
       res
         .status(200)
@@ -67,6 +67,33 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
+  }
+});
+
+router.post('/addrecipe', async (req, res) => {
+  console.log(req.body)
+  // attempt to create a recipe in our users DB
+  try {
+
+    const dbRecipeData = await Recipe.create({
+      "user_id":req.body.id,
+      "recipes_name":req.body.recipeName,
+      "description":req.body.description,
+      "ingredients":req.body.ingredients,
+      "servings":req.body.servings,
+      "preptime":req.body.preptime,
+      "cooktime":req.body.cooktime,
+      "totaltime":req.body.totaltime,
+      "instructions":req.body.instructions,
+      "images":req.body.ImgHash,
+      "allergens":req.body.allergens,
+      "difficulty":req.body.difficulty,
+    })
+
+    res.status(200).json(dbRecipeData);
+    // if exception didnt happen, it saves the session and logs in 
+  } catch (err) {
+      res.status(500).json(err);
   }
 });
 
@@ -81,6 +108,7 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
 
 // Delete recipe
 router.delete('/:id', async (req, res) => {

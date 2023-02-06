@@ -5,7 +5,7 @@ var FormData = require('form-data');
 require('dotenv').config();
 
 const formData = new FormData();
-formData.append("file", fs.createReadStream('./image6.png'))
+formData.append("file", fs.createReadStream('./image5.png'))
 axios({
 	method: 'post',
 	url: 'https://api.pinata.cloud/pinning/pinFileToIPFS',
@@ -17,3 +17,5 @@ axios({
 		const ImgHash = `ipfs://${response.data.IpfsHash}`;
 		console.log(ImgHash); 
   });
+
+console.log(fs.createReadStream('./image5.png'))
