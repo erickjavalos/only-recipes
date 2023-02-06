@@ -7,6 +7,7 @@
   --dark: #182c23;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
+  background-color: #000;
 }
 
 * {
@@ -19,14 +20,18 @@ a {
 }
 
 a:visited {
-  color: inherit;
+  color: whitesmoke;
 }
 
 header {
-  padding: 40px;
+  padding: 10px;
   text-align: center;
   background: var(--primary);
   color: var(--light);
+}
+
+h1 {
+  color: white;
 }
 
 main {
@@ -80,7 +85,7 @@ ul {
 .gallery {
   flex: 4;
   background-color: black;
-  padding: 50px;
+  padding: 10px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -239,11 +244,11 @@ img {
 }
 
 .grey {
-  background-color: #ececec;
+  background-color: gray;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: var(--secondary);
+  color: white;
 }
 
 .page-title {
@@ -253,5 +258,9 @@ img {
 
 input::placeholder {
   font-size: 12px;
+}
+
+a.nav-link:hover {
+  color: rgba(255, 247, 0, 0.849);
 }
 

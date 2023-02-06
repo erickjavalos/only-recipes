@@ -1,10 +1,9 @@
 {{!-- header for homepage --}}
  <header>
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg">
       <div id="logo">
         <img src="Recipes-removebg-preview-cropped.png" alt="logo" width="120" height="120">
       </div>
-      <a class="navbar-brand" href="/">OnlyRecipes</a>
       <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="nav navbar-nav ml-auto ">
               <li class="nav-item">
@@ -23,7 +22,7 @@
               <li class="nav-item pill gold">
                   <a class="nav-link" href="/login">Log In</a> 
               </li>
-              <li class="nav-item pill grey">
+              <li class="nav-item">
                   <a class="nav-link" href="/signup">Sign Up</a>
               </li>
 
@@ -33,6 +32,7 @@
     </nav>
 </header>
 
+<div class="gallery">
 <main>
   {{!-- handle bars for other views --}}
   {{#if loggedIn}}
@@ -40,13 +40,14 @@
     {{> profile-details }}
 
     <script src="/js/logout.js"></script>
+    
   {{else}}
 
-    <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;">
+    {{!-- <img src="./images/background.png" style="width: 100%; height: auto;margin: 0;"> --}}
   
   {{/if}}
 
-
-
+</div>
 </main>
+
 

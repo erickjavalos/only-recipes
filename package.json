@@ -4,14 +4,20 @@
   "description": "A full stack application that allows users to create a profile and upload their favorite recipes!",
   "main": "server.js",
   "dependencies": {
+    "@octokit/core": "^4.2.0",
+    "axios": "^1.3.2",
+    "base-64": "^1.0.0",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
+    "form-data": "^4.0.0",
+    "github": "^14.0.0",
     "handlebars": "^4.7.6",
     "mysql2": "^2.2.5",
+    "octokit": "^2.0.14",
     "sequelize": "^6.3.5"
   },
   "scripts": {
@@ -28,6 +34,5 @@
   "bugs": {
     "url": "https://github.com/erickjavalos/only-recipes/issues"
   },
-  "homepage": "https://github.com/erickjavalos/only-recipes#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/erickjavalos/only-recipes#readme"
 }
