@@ -84,7 +84,7 @@ ul {
 
 .gallery {
   flex: 4;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   padding: 10px;
   display: flex;
   flex-flow: column wrap;
@@ -305,4 +305,14 @@ a.nav-link:hover {
 
 .navbar-nav {
   flex-direction: row;
+}
+.background {
+  background-image: url(/BG-repeat.png);
+  background-size: cover;
+  height: 100vh;
+}
+
+.container {
+  background-color: transparent;
+  height: 100%;
 }
