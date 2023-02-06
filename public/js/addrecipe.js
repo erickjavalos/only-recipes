@@ -38,6 +38,9 @@ const addrecipeFormHandler = async (event) => {
           method: 'POST',
           body: JSON.stringify({ recipeName, description, ingredients, servings, preptime, cooktime, totaltime, instructions, allergens, difficulty, id, ImgHash}),
           headers: { 'Content-Type': 'application/json' },
+        }).then(()=> {
+
+          document.location.replace('/');
         });
       })
       .catch(error => {
