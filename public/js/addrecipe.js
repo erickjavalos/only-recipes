@@ -51,7 +51,3 @@ const addrecipeFormHandler = async (event) => {
   
   // event listener on sign up button submit
 form.addEventListener('click', addrecipeFormHandler);
-
-  // $("#img").change(function(){
-  //     readURL(this);
-  // });
