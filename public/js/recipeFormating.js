@@ -11,7 +11,7 @@ let format = (parser,content, div) => {
     var html = `<ul>`
     // dynamically create elements
     dataSplit.forEach((str) => {
-        html += `<li>${str}</li>`
+        html += `<li class="font-decrease" style="margin-bottom: 3%">${str}</li>`
     })
     
     html += '</ul>'

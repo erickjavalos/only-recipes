@@ -10,42 +10,29 @@
     </ul>
 </div>
 
-{{!-- recipe information --}}
 <div class="break">
-     <div class="row recipe-overview">
-        <div class="row card-recipe card-hover">
-            <div class="row" style="width: 100%">
-                <div class="col-12">
-                    <h5 class="card-title text-center">{{recipeName}}</h5>
-                </div>
-            </div>
-            <div class="row my-5">
-                {{!-- image portion --}}
-                <div class="col-4">
+<div class="row recipe-overview font-change">
+    <div class="row card-recipe card-hover">
+        <div class="card-body">
+            <h5 class="card-title">{{recipeName}}</h5>
 
-                    <img
-                        src= 'https://ipfs.io/ipfs/{{images}}''
-                        alt="Recipe Image"
-                        class="card-img-top"
-                    />
+            <img
+                src= 'https://ipfs.io/ipfs/{{images}}'
+                alt="Recipe Image"
+                class="mx-auto"
+            />
+
+            {{#each content}}
+                <p class="card-text font-increase" ><b>{{title}}</b></p>
+                 <div id="{{id}}-div" >
+                    <p id="{{id}}" class="font-decrease">{{data}}</p>
                 </div>
-                <div class="col-8">
-                    {{!-- iterate through each content --}}
-                    {{#each content}}
-                        <div class="row">
-                            <div class="col-2 no-padding">
-                                <p><b>{{title}}</b></p>
-                            </div>
-                            <div class="col-9 recipe-font">
-                                <div id="{{id}}-div">
-                                    <p id="{{id}}">{{data}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    {{/each}}
-                </div>
-            </div>
+        
+            {{/each}}
         </div>
-    </div>  
+        
+    </div>
+   
+
+</div>
 </div>

@@ -89,28 +89,28 @@ router.get('/recipe', async (req,res) => {
         images: recipe.images,
         content: [
           {
-            title: "Ingredients:",
+            title: "Ingredients",
             data: recipe.ingredients,
             id: "ingredients"
           },
           {
-            title: "Allergens:",
+            title: "Allergens",
             data: recipe.allergens,
             id: "allergens"
           },
           {
-            title: "Servings:",
+            title: "Servings",
             data: recipe.servings,
             id: "servings"
           },
           {
-            title: "Prep Time:",
+            title: "Prep Time",
             data: recipe.preptime,
             id: "prep-time"
           },
           {
             title: "Cook Time",
-            data: recipe.cookTime,
+            data: recipe.cooktime,
             id: "cook-time"
           },
           {

@@ -14,6 +14,7 @@
   font-family: 'Mochiy Pop One';
 }
 
+
 a {
   color: #000;
   text-decoration: none;
@@ -64,6 +65,8 @@ nav a {
 
 ul {
   padding: 0;
+  text-align: center;
+  list-style-position: inside;
 }
 
 .recipe-overview {
@@ -136,14 +139,25 @@ img {
 .card-title{
   font-size: 2.0rem;
 }
+
+body div .font-change{
+  font-family: "Courier New";
+}
+.font-increase{
+
+    font-size: 2.0rem;
+}
+.font-decrease{
+  font-size: 1.0rem;
+}
 .card-hover:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-recipe{
   margin: 20px;
-  width: 90%;
-  flex: 0 1 90%;
+  /* width: 80%; */
+  flex: 0 1 60%;
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--light);
@@ -302,6 +316,11 @@ a.nav-link:hover {
    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 30%);
   }
 }
+
+@media (max-width: 1200px) {
+
+ }
+
 
 .navbar-nav {
   flex-direction: row;
