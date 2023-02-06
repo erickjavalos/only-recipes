@@ -2,48 +2,23 @@
 
 ## Description
 
-The purpose of this application is to allow users to create a profile in our application that tracks recipes. The application
-allows users to create a profile, sign in, and add a recipe of their choice. 
+The purpose of this application is to have users create a profile, and sign in using their credentials in our application that allows them to add and delete recipes. The application also lets users browse through existing recipes within the application and have the option to sign out as well.
 
-Upon entering a recipe, the user is prompted to input ingredients, a step by step process, prep time/cook time, and other options.
+The future product will allow users to follow other accounts, leave reviews on existing recipes, and favorite recipes of their interest!
 
-The future product will allow users to follow other accounts and favorite recipes of their interest!
+## Technologies Used
+* Node.js       
+* Mysql
+* HandleBars.js
+* Insomnia
+* BootStrap
+* Google Font
 
-## Table of Contents
+## Screenshot
 
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [Contribute](#Contribute)
-- [Tests](#Tests)
-- [Questions](#Questions)
-- [License](#License)
 
-## Installation
 
-```
-npm install
-```
+## Link to Deployed Site
 
-## Usage
 
-```
-npm start
-```
 
-## Contributing
-
-Please email me via the email below!
-
-## Tests
-
-npm run test
-
-## Questions?
-
-Do you have questions?
-- [Email](mailto:avaloserick97@gmail.com)
-- [Github](https://github.com/erickjavalos)
-
-## License
-
-None
