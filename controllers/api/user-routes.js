@@ -71,38 +71,23 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/addrecipe', async (req, res) => {
+  console.log(req.body)
   // attempt to create a recipe in our users DB
   try {
-    console.log(req.body)
-    // makes a query to create user recipe
-    // const dbRecipeData = await Recipe.create({
-    //   user_id: "1",
-    //   recipes_name: req.body.recipes_name,
-    //   allergens: req.body.allergens,
-    //   servings: req.body.servings,
-    //   preptime: req.body.preptime,
-    //   cooktime: req.body.cooktime,
-    //   totaltime: req.body.totaltime,
-    //   instructions: req.body.instructions,
-    //   images: req.body.images,
-    //   difficulty: req.body.difficulty,
-    //   description: req.body.description,
-    //   ingredients: req.body.ingredients,
-    //   difficulty: req.body.difficulty,
-    // });
+
     const dbRecipeData = await Recipe.create({
-      user_id: req.body.id,
-      recipes_name: req.body.recipeName,
-      description: req.body.escription,
-      ingredients: req.body.ingredients,
-      servings: req.body.servings,
-      preptime: req.body.preptime,
-      cooktime: req.body.cooktime,
-      totaltime: req.body.totaltime,
-      instructions: req.body.instructions,
-      images: req.body.images,
-      allergens: req.body.allergens,
-      difficulty: req.body.difficulty
+      "user_id":req.body.id,
+      "recipes_name":req.body.recipeName,
+      "description":req.body.description,
+      "ingredients":req.body.ingredients,
+      "servings":req.body.servings,
+      "preptime":req.body.preptime,
+      "cooktime":req.body.cooktime,
+      "totaltime":req.body.totaltime,
+      "instructions":req.body.instructions,
+      "images":req.body.ImgHash,
+      "allergens":req.body.allergens,
+      "difficulty":req.body.difficulty,
     })
 
     res.status(200).json(dbRecipeData);
@@ -123,6 +108,7 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
 
 // Delete recipe
 router.delete('/:id', async (req, res) => {

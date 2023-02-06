@@ -90,8 +90,7 @@ const recipes =
     }
 
 ]
-// const seedsrecipes = ()=> Recipe.bulkCreate(recipes)
-const seedsrecipes = ()=> Recipe.create(recipes[0])
+const seedsrecipes = ()=> Recipe.bulkCreate(recipes)
 module.exports = seedsrecipes
 
 
