@@ -7,6 +7,7 @@
   --dark: #182c23;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
+  background-color: #000;
 }
 
 * {
@@ -23,7 +24,7 @@ a:visited {
 }
 
 header {
-  padding: 40px;
+  padding: 10px;
   text-align: center;
   background: var(--primary);
   color: var(--light);
@@ -84,7 +85,7 @@ ul {
 .gallery {
   flex: 4;
   background-color: black;
-  padding: 50px;
+  padding: 10px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
