@@ -263,3 +263,46 @@ input::placeholder {
 a.nav-link:hover {
   color: rgba(255, 247, 0, 0.849);
 }
+
+@media (min-width: 200px) {
+   .navbar-expand-lg {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .navbar-expand-lg .navbar-collapse {
+    display: -webkit-box!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+  }
+
+}
+
+@media (max-width: 600px) {
+ .login-card {
+   margin: 0 0 20px 0;
+   flex: 0 0 50%;
+   max-width: 80%;
+   padding: 50px 0px;
+   border: 0px solid var(--dark);
+   border-radius: 4%;
+   background-color: #ffffff;
+   color: black;
+   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 30%);
+  }
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
