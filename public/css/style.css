@@ -70,6 +70,7 @@ ul {
 }
 
 .recipe-overview {
+  width: 100%;
   justify-content: center;
 }
 
@@ -130,6 +131,7 @@ img {
 
 .card {
   margin: 20px;
+  width: 100%;
   flex: 0 1 300px;
   border: 7px double var(--dark);
   border-radius: 10px;

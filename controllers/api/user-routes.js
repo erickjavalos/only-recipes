@@ -85,7 +85,7 @@ router.post('/addrecipe', async (req, res) => {
       "cooktime":req.body.cooktime,
       "totaltime":req.body.totaltime,
       "instructions":req.body.instructions,
-      "images":req.body.ImgHash,
+      "images":"1",
       "allergens":req.body.allergens,
       "difficulty":req.body.difficulty,
     })

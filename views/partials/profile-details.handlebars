@@ -1,25 +1,21 @@
-<div class="container my-5">
-    <div class="row" style="width:100%;justify-content:center;">
-        <h1 class="">Recipes</h1>
-    </div>
-    <div>
-        <div class="row recipe-overview">
-            {{!-- iterate through each recipe --}}
-            {{#each recipes}}
-                <div id="{{recipe_id}}" class="col-md-4 card card-hover">
-                    <h4>{{recipes_name}}</h4>
-                    <img
-                        src= 'https://ipfs.io/ipfs/{{images}}'
-                        alt="Recipe Image"
-                        class="img-fluid"
-                    />
-                    <p>{{servings}}</p>
-                    <p>{{cooktime}}</p>
-                </div>
-
-            {{/each}}
-
-        </div>
-    </div>
+<div class="row" style="width:100%;justify-content:center;">
+    <h1 class="">Recipes</h1>
 </div>
+    <div class="row recipe-overview" style="width:100%;">
+        {{!-- iterate through each recipe --}}
+        {{#each recipes}}
+            <div id="{{recipe_id}}" class="card card-hover">
+                <h4>{{recipes_name}}</h4>
+                {{!-- <img
+                    src= 'https://ipfs.io/ipfs/{{images}}'
+                    alt="Recipe Image"
+                    class="img-fluid"
+                /> --}}
+                <p>{{servings}}</p>
+                <p>{{cooktime}}</p>
+            </div>
+
+        {{/each}}
+
+    </div>
 <script src="/js/recipe.js"></script>
