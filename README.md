@@ -15,7 +15,9 @@ The future product will allow users to follow other accounts, leave reviews on e
 * Google Font
 
 ## Screenshot
+![image](https://user-images.githubusercontent.com/114899256/217150255-507b326d-e2cd-4bf5-9e0e-8af8fe89a942.png)
 
+![image](https://user-images.githubusercontent.com/114899256/217150369-f7fdcc92-610b-4af4-a8e3-487cdcb3cb1b.png)
 
 
 ## Link to Deployed Site
