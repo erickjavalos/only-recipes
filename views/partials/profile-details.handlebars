@@ -5,14 +5,15 @@
         {{!-- iterate through each recipe --}}
         {{#each recipes}}
             <div id="{{recipe_id}}" class="card card-hover">
-                <h4>{{recipes_name}}</h4>
+                <h4 class="mb-5">{{recipes_name}}</h4>
                 {{!-- <img
                     src= 'https://ipfs.io/ipfs/{{images}}'
                     alt="Recipe Image"
                     class="img-fluid"
                 /> --}}
-                <p>{{servings}}</p>
-                <p>{{cooktime}}</p>
+                <p class="mt-4">Difficulty: {{difficulty}}</p>
+                <p>Servings: {{servings}}</p>
+                <p>Total Time: {{totaltime}}</p>
             </div>
 
         {{/each}}
